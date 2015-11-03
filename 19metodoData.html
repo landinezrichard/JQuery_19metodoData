@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8"/>
+		<title>19 Metodo Data</title>		
+		
+		<!--Scripts Aca -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js">		
+		</script>
+		<script type="text/javascript">
+			$(document).on("ready",function(){
+				$("ul li").each(function(indice,elemento){
+					//se agrega un atributo a los elementos HTML llamado data, utilizado para aplicaciones grandes
+					//como el atributo aún no es soportado por algunos navegadores, no se ve, sin embargo con jquery podemos agregarlo y verlo
+					
+					//para agregar el atributo (setter)
+					//$.data(elemento,'nombreAtributo',valor);
+					$.data(elemento,'posicion',indice);					
+				});
+				
+				$("ul li").each(function(indice,elemento){
+					//para ver el atributo (getter)
+					//$.data(elemento,'nombreAtributo');
+					console.log($.data(elemento,'posicion'));					
+				});				
+			});
+		
+		</script>
+		
+	</head>
+	<body>
+		<ul>
+			<li id="primero">Primero</li>
+			<li>Segundo</li>
+			<li>Tercero</li>
+			<li>Cuarto</li>
+		</ul>	
+		
+	</body>
+</html>
